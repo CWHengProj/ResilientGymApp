@@ -21,3 +21,9 @@
 
 ## References, API
 - This app uses the RESTful endpoints served here: https://github.com/wrkout/exercises.json
+
+
+## Android installation
+- Download Resilient.apk from this repo to your mobile phone.
+- Allow it to install without scanning if the error pops up
+- For further troubleshooting regarding installation : https://www.androidauthority.com/how-to-install-apks-31494/
