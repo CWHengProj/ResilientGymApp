@@ -1,0 +1,45 @@
+
+<mat-toolbar>
+  <div>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <span>Resilient</span>
+  </div>
+  <div>
+    <a href="https://github.com/CWHengProj/ResilientFrontEnd/blob/main/README.md" target="_blank">
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/tutorial" >
+        <mat-icon>help</mat-icon>
+      </button>
+    </a>
+    @if(authService.currentUserSig()){
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="logOut()" routerLink="/home">
+        <mat-icon >logout</mat-icon>
+      </button>
+      }
+      @else{
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/login">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      }
+  </div>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer #drawer mode="push">
+    <mat-nav-list>
+      <a mat-list-item class="nav-link active" aria-current="page" routerLink="home" (click)="drawer.toggle()">Home</a>
+      <a mat-list-item class="nav-link active" aria-current="page" routerLink="workout" (click)="drawer.toggle()">Workout</a>
+      <a mat-list-item class="nav-link active" aria-current="page" routerLink="builder" (click)="drawer.toggle()">Builder</a>
+      <a mat-list-item class="nav-link active" aria-current="page" routerLink="more" (click)="drawer.toggle()">Additional Features</a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    @if(authService.currentUserSig()){
+      <app-timer></app-timer>
+    }
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

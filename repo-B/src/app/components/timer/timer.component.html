@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-content>
+
+        <div class="timer-display">{{ formatTime(timeLeft) }}</div>
+        <div class="timer-controls">
+            <mat-form-field appearance="fill" style="flex: 1; min-width: 100px;">
+                <mat-label>Set Timer Duration (in seconds) </mat-label>
+                <input matInput type="number" placeholder="Set Duration" (change)="setTimerDuration($event)">
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button (click)="startTimer()" [disabled]="isTimerRunning">Start</button>
+            <button mat-raised-button (click)="pauseTimer()" [disabled]="!isTimerRunning">Pause</button>
+            <button mat-raised-button (click)="resetTimer()">Reset</button>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,77 @@
+<div class="workout-container">
+  @if(loading){
+    <mat-card>
+      <mat-card-content style="text-align: center; padding: 24px;">
+        <mat-spinner style="margin: 0 auto;"></mat-spinner>
+        <p style="margin-top: 16px;">Loading your workout...</p>
+      </mat-card-content>
+    </mat-card>
+  }
+  
+  @if(!loading && !userDetails){
+    <mat-card>
+      <mat-card-content style="text-align: center; padding: 24px;">
+        <mat-icon style="font-size: 48px; height: 48px; width: 48px; margin-bottom: 16px;">error_outline</mat-icon>
+        <p>Could not load your workout. Please try again later or create a new workout.</p>
+      </mat-card-content>
+    </mat-card>
+  }
+
+  @if(!loading && userDetails){
+    <h2 style="margin-bottom: 16px; font-weight: 500;">{{serveDeck.deckName}}</h2>
+    <form [formGroup]="userForm" (submit)="updateUser()">
+      <div formArrayName="exercises">
+        @for(exercise of exercisesArray.controls; track $index){
+          <mat-expansion-panel hideToggle="true"
+            [formGroupName]="$index" 
+            style="margin-bottom: 16px;" 
+            [style.border-left]="checkboxStates[$index] ? '4px solid #4caf50' : 'none'"
+            [expanded]="!checkboxStates[$index]"
+            class="exercise-panel">
+            <mat-expansion-panel-header style="height: auto; padding: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <span style="font-weight: 500; font-size: 16px;">
+                  <button mat-button type="button" (click)="getExerciseDetails(getUserExerciseName($index))" >
+                    {{formatExerciseName(getUserExerciseName($index))}}
+                  </button>
+                </span>
+                <mat-checkbox 
+                  [checked]="checkboxStates[$index]" 
+                  (change)="toggleCheckbox($index)"
+                  (click)="$event.stopPropagation()"
+                  color="primary">
+                  Completed
+                </mat-checkbox>
+              </div>
+            </mat-expansion-panel-header>
+            
+            <div style="padding: 8px 0;">
+              <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+                <mat-form-field appearance="fill" style="flex: 1; min-width: 140px;">
+                  <mat-label>Reps Completed</mat-label>
+                  <input matInput type="number" formControlName="reps">
+                  <mat-hint>Target: {{exercise.value.repCap}} reps</mat-hint>
+                  <mat-error *ngIf="exercise.get('reps')?.invalid && exercise.get('reps')?.touched">
+                    Reps are required
+                  </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill" style="flex: 1; min-width: 140px;">
+                  <mat-label>Weight</mat-label>
+                  <input matInput type="number" formControlName="weightUsed" (blur)="fixWeightIncrement($index)">
+                  <span matSuffix>kg</span>
+                  <mat-hint>Increments of {{exercise.value.increment_used}}</mat-hint>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        }
+      </div>
+      <div style="margin-top: 24px; text-align: center;">
+        <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">
+          Save Workout
+        </button>
+      </div>
+    </form>
+  }
+</div>

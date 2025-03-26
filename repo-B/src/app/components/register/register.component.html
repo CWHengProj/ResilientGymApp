@@ -1,0 +1,35 @@
+
+
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div>
+    <mat-form-field >
+      <mat-label>Username</mat-label>
+      <input type="text" matInput placeholder="Username" formControlName="username" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" />
+    </mat-form-field>
+  </div>
+  <div>
+    @if (errorMessage) {
+      <mat-error>{{ errorMessage }}</mat-error>
+    }
+    
+    </div>
+    <div>
+      <button mat-raised-button type="submit">Sign Up</button>
+    </div>
+    <div>
+    
+      <a mat-list-item class="nav-link active" aria-current="page" routerLink="/login">Have an account already?</a>
+    </div>
+  </form>

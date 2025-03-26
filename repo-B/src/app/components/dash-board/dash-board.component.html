@@ -1,0 +1,49 @@
+<div [formGroup]="userForm">
+    <mat-card appearance="outlined">
+        <mat-card-content>
+            <h4>Contact the developer about the app:</h4>
+            <mat-form-field>
+                <mat-label>Category: </mat-label>
+                <select matNativeControl required>
+                    <option value="low">UI/UX</option>
+                    <option value="suggestions">Suggestions</option>
+                    <option value="bugs">App Breaking bugs</option>
+                    <option value="others">Others</option>
+                </select>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Leave a comment</mat-label>
+                <textarea matInput placeholder="Minimum of 20 characters" formControlName="comment"></textarea>
+            </mat-form-field>
+            <button mat-raised-button type="submit" (click)="sendEmailToDev()" [disabled]="userForm.invalid">Send it!</button>
+        </mat-card-content>
+      </mat-card>
+</div>
+<div [formGroup]="durationForm">
+    <mat-card appearance="outlined">
+        <mat-card-content>
+
+            <h4>Request your workout history:</h4>
+            <mat-form-field>
+                <mat-label>Workout history:</mat-label>
+                <select matNativeControl required formControlName="duration">
+                    <option value="week">Past Week</option>
+                    <option value="month">Past Month</option>
+                    <option value="year">Past Year</option>
+                </select>
+            </mat-form-field>
+            <button mat-raised-button type="button" (click)="requestWorkoutHistory()" [disabled]="durationForm.invalid">Request</button>
+        </mat-card-content>
+      </mat-card>
+</div>
+<div>
+    <mat-card appearance="outlined">
+        <mat-card-content [formGroup]="freshStart">
+
+            <h4>Tired of your workouts? Click here to start from scratch </h4>
+            <mat-checkbox class="example-margin" formControlName="confirm">I confirm that I want to delete my workout history.</mat-checkbox>
+            <button mat-raised-button type="button" (click)="clearUserData()" [disabled]="!freshStart.get('confirm')?.value">Start Afresh</button>
+        </mat-card-content>
+      </mat-card>
+</div>
+

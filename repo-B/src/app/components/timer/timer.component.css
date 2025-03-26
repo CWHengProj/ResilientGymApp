@@ -1,0 +1,66 @@
+
+.timer-card {
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.timer-display {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 16px 0;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.timer-progress {
+  margin: 16px 0;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.timer-buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timer-buttons button {
+  min-width: 100px;
+}
+
+@media screen and (max-width: 599px) {
+  .timer-display {
+    font-size: 2rem;
+  }
+  
+  .timer-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .timer-buttons button {
+    margin-bottom: 8px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .timer-buttons button {
+    min-width: 120px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .timer-card {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

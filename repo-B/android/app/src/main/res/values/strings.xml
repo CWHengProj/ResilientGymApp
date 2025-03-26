@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Resilient</string>
+    <string name="title_activity_main">Resilient</string>
+    <string name="package_name">com.cw.resilient</string>
+    <string name="custom_url_scheme">com.cw.resilient</string>
+</resources>

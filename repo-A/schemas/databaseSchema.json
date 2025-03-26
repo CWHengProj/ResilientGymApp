@@ -1,0 +1,83 @@
+[
+    {
+        "email":"asdglkd@gmail.com",
+        "darkMode":true,
+        "nextWorkout":0,
+        "decks":[
+                    {
+                        "deckName":"The Decimator",
+                        "workoutDay":1,
+                        "exercises":[
+                            {
+                                "exerciseName":"Barbell_Curl",
+                                "muscleGroup":"biceps",
+                                "increment_used":2.5,
+                                "reps":12,
+                                "repCap":8,
+                                "lastWeightUsed":15.0,
+                                "timerDuration":180
+
+                            },
+                            {
+                                "exerciseName":"Barbell_Curl",
+                                "muscleGroup":"biceps",
+                                "increment_used":2.5,
+                                "reps":12,
+                                "repCap":8,
+                                "lastWeightUsed":15.0,
+                                "timerDuration":180
+
+                            },
+                            {
+                                "exerciseName":"Barbell_Curl",
+                                "muscleGroup":"biceps",
+                                "increment_used":2.5,
+                                "reps":12,
+                                "repCap":8,
+                                "lastWeightUsed":15.0,
+                                "timerDuration":180
+
+                            }
+                        ]
+                        
+                    },
+                    {
+                        "deckName":"The Decimator",
+                        "workoutDay":2,
+                        "exercises":[
+                            {
+                                "exerciseName":"Barbell_Curl",
+                                "muscleGroup":"biceps",
+                                "increment_used":2.5,
+                                "reps":12,
+                                "repCap":8,
+                                "lastWeightUsed":15.0,
+                                "timerDuration":180
+
+                            },
+                            {
+                                "exerciseName":"Barbell_Curl",
+                                "muscleGroup":"biceps",
+                                "increment_used":2.5,
+                                "reps":12,
+                                "repCap":8,
+                                "lastWeightUsed":15.0,
+                                "timerDuration":180
+
+                            },
+                            {
+                                "exerciseName":"Barbell_Curl",
+                                "muscleGroup":"biceps",
+                                "increment_used":2.5,
+                                "reps":12,
+                                "repCap":8,
+                                "lastWeightUsed":15.0,
+                                "timerDuration":180
+
+                            }
+                        ]
+                        
+                    }
+                ]
+    }
+]       

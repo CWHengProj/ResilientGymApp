@@ -1,0 +1,14 @@
+div{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: left;
+    mat-card{
+        mat-card-content{
+            display:flex;
+            flex-direction:column;
+            justify-content: space-between;
+            align-items: left;
+        }
+    }
+}
