@@ -23,9 +23,8 @@
 ## Why was this app created?
 - This app was created as a solution for myself to track my workout history, without having to keep an excel sheet and create a new row every time a new exercise is completed.
 - I wanted an app that could provide me with the convenience of accessing my workouts on the go, without being tied down to a subscription service. Most exercise applications do not have an option for me to export my data, meaning a lot of the logs are lost if the user would like to try another application.
-- This website also caters to beginners who don't know what to do in the gym, by giving them an easy way to construct workouts, exercise instructions and remembering their exercises for them.
 
-## Why you should use this application
+## Why **you** should use this application
 - Clean and simple app makes it very user friendly even for beginners
 - Take the stress off deciding what routine to use with prebuilt workouts
 - Content creators / fitness influencers can create workouts to share with their subscribers, without worrying about equipment availiblity since users can configure the exercises used based on muscle group
