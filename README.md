@@ -27,3 +27,10 @@
 - Download Resilient.apk from this repo to your mobile phone.
 - Allow it to install without scanning if the error pops up
 - For further troubleshooting regarding installation : https://www.androidauthority.com/how-to-install-apks-31494/
+
+
+
+# Changelog
+## v0.11 (3 Apr 2025)
+- Moved backend to render and other free platforms
+- Android apk is non functional, updating on the next patch
