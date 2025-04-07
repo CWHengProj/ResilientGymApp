@@ -1,4 +1,5 @@
 # Resilient - the fitness app that gives your back your freedom
+https://www.resilientfitness.club
 
 ## App features
 - At a glance
