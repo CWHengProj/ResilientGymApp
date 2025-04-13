@@ -159,8 +159,9 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     
     this.http.get<ExerciseDetails>(`${environment.baseUrl}/api/workout/getExerciseInfo?exerciseName=${exerciseName}`).subscribe({
       next: (data) => {
-        this._snackBar.open(data.instructions.join('\n'),'Okay');
-
+        // TODO: use dialog box instead
+        this._snackBar.open(data.instructions.join('\n'), 'Okay'
+        );
       },
       error: (error) => {
         console.error('Error fetching exercise details:', error);
@@ -196,7 +197,9 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     this.subscription.add(
       this.userStore.updateUserDetails([this.userDetails, true])
     );
-    this._snackBar.open('Great work today!','Okay');
+    this._snackBar.open('Great work today!','Okay', {
+      duration: 3000
+    });
     localStorage.removeItem("workout");
   }
 

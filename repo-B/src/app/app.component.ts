@@ -15,7 +15,9 @@ export class AppComponent implements OnInit{
   
   logOut() {
     this.authService.logout()
-    this._snackBar.open('You have been logged out. See you again soon!','Okay')
+    this._snackBar.open('You have been logged out. See you again soon!','Okay' , {
+      duration: 3000
+    })
   }
   ngOnInit(): void {
     this.authService.user$.subscribe(user=>{

@@ -21,6 +21,7 @@ export class DashBoardComponent implements OnInit, OnDestroy{
   http=inject(HttpClient);
   fb=inject(FormBuilder);
   private _snackBar = inject(MatSnackBar);
+  cooldown = false;
   
   userForm!:FormGroup;
   email:string = '';
@@ -37,7 +38,7 @@ export class DashBoardComponent implements OnInit, OnDestroy{
   createForm(){
     this.userForm = this.fb.group({
       urgency: this.fb.control<string>('Low', Validators.required),
-      comment: this.fb.control<string>('',[Validators.minLength(20), Validators.required])
+      comment: this.fb.control<string>('',[Validators.minLength(30), Validators.required])
       
     });
     this.durationForm = this.fb.group({
@@ -48,7 +49,9 @@ export class DashBoardComponent implements OnInit, OnDestroy{
     });
   }
   sendEmailToDev() {
-    this._snackBar.open('Thank you for your feedback!','Okay');
+    this._snackBar.open('Thank you for your feedback!','Okay', {
+      duration: 3000
+    });
     
     const feedbackEmail ={
       address:this.email,
@@ -61,10 +64,14 @@ export class DashBoardComponent implements OnInit, OnDestroy{
         error:(err)=>console.log(err)
       })
     );
+    this.cooldown = true;
+    setTimeout(() => { this.cooldown = false }, 3000);
   }
       
   requestWorkoutHistory() {
-    this._snackBar.open('Here you go!','Okay');
+    this._snackBar.open('Here you go!','Okay', {
+      duration: 3000
+    });
     this.user.requestWorkoutHistory(this.email,this.durationForm.get('duration')?.value);
   }
 
@@ -73,7 +80,9 @@ export class DashBoardComponent implements OnInit, OnDestroy{
       this.user.clearUserData(this.email).subscribe(
         {
           next:()=>{
-            this._snackBar.open('Your data has been successfully deleted.','Okay');
+            this._snackBar.open('Your data has been successfully deleted.','Okay', {
+              duration: 3000
+            });
 
           },
           error: errors =>{

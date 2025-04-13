@@ -17,3 +17,4 @@
 - Email should be better formatted to have the header as the feedback, title as the priority and then the message contents
 - protect the backend by ensuring user is valid before being able to access their workouts
 - backend priority level all reflected as low
+- backend should be self pinging so render does not spin down

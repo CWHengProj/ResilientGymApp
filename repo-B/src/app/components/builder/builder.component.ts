@@ -224,7 +224,9 @@ export class BuilderComponent implements OnInit {
       this.exercises(workoutIndex).push(this.newexercise());
     }
     else{
-      this._snackBar.open('Enough exercises for now.','Okay');
+      this._snackBar.open('Enough exercises for now.','Okay', {
+        duration: 3000
+      });
     }
   }
   
@@ -250,14 +252,18 @@ export class BuilderComponent implements OnInit {
   aiAnalysis() {
     this.userService.aiAnalyser(this.userDetails).subscribe(
       {
-        next: (response)=> this._snackBar.open(response,'Okay'),
+        next: (response)=> this._snackBar.open(response,'Okay', {
+          duration: 3000
+        }),
         error: (err) => console.log(err)
       }
     )
   }
   shareWorkout() {
     if(this.workouts().length === 0) {
-      this._snackBar.open('You do not have any workouts to share.', 'Okay');
+      this._snackBar.open('You do not have any workouts to share.', 'Okay', {
+        duration: 3000
+      });
       return
     }
     const formValue = this.userForm.value;
@@ -279,7 +285,9 @@ export class BuilderComponent implements OnInit {
       },
       error: (err:string) => {
         console.error('Error sharing workout:', err);
-        this._snackBar.open('Failed to share workout. Please try again.', 'Okay');
+        this._snackBar.open('Failed to share workout. Please try again.', 'Okay', {
+          duration: 3000
+        });
       }
     });
   }
@@ -287,16 +295,22 @@ export class BuilderComponent implements OnInit {
     this.userService.getWorkout(programId).subscribe({
       next: (decks: Deck[]) => {
         if (!decks || decks.length === 0) {
-          this._snackBar.open('Program not found. It could be expired', 'Okay');
+          this._snackBar.open('Program not found. It could be expired', 'Okay', {
+            duration: 3000
+          });
           return;
         }
         
         this.populateFormWithDecks(decks);
-        this._snackBar.open(`Loaded program successfully!`, 'Okay');
+        this._snackBar.open(`Loaded program successfully!`, 'Okay', {
+          duration: 3000
+        });
       },
       error: (err:string) => {
         console.error('Error loading workout:', err);
-        this._snackBar.open('Failed to load program', 'Okay');
+        this._snackBar.open('Failed to load program', 'Okay', {
+          duration: 3000
+        });
       }
     });
   }

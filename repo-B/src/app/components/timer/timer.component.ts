@@ -60,7 +60,9 @@ export class TimerComponent implements OnInit, OnDestroy {
         await Haptics.vibrate();
       };
       
-    this._snackBar.open('Your break is up!','Get back to work');
+    this._snackBar.open('Your break is up!','Get back to work', {
+      duration: 3000
+    });
 
     this.route.navigate(['/workout']);
   }

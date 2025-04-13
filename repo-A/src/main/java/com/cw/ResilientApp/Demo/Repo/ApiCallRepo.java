@@ -20,6 +20,7 @@ public class ApiCallRepo {
         rt = new RestTemplate();
         String url = "https://raw.githubusercontent.com/wrkout/exercises.json/master/exercises/"+exerciseName+"/exercise.json";
         ResponseEntity<String> rawData= rt.getForEntity(url, String.class);
+        // System.out.println(rawData.toString());
         try (InputStream is = new ByteArrayInputStream(rawData.getBody().getBytes())) {
             JsonReader reader = Json.createReader(is);
             JsonObject data = reader.readObject();

@@ -18,7 +18,9 @@ export class AuthGuard implements CanActivate {
            map(user => !!user), 
            tap(loggedIn => {
              if (!loggedIn) {
-               this._snackBar.open('Access denied. Please log in.','Okay');
+               this._snackBar.open('Access denied. Please log in.','Okay' , {
+                duration: 3000
+              });
                this.router.navigate(['/login']);
              }
              else{
