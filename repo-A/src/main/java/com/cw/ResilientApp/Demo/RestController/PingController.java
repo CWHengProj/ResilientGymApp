@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PingController {
     @GetMapping("")
     public String ping() {
-        return "";
+        return "pong";
     }
     
 }

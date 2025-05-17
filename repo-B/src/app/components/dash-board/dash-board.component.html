@@ -4,11 +4,11 @@
             <h4>Contact the developer about the app:</h4>
             <mat-form-field>
                 <mat-label>Category: </mat-label>
-                <select matNativeControl required>
-                    <option value="low">UI/UX</option>
-                    <option value="suggestions">Suggestions</option>
-                    <option value="bugs">App Breaking bugs</option>
-                    <option value="others">Others</option>
+                <select matNativeControl required formControlName="urgency">
+                    <option value="Low">UI/UX</option>
+                    <option value="Suggestions">Suggestions</option>
+                    <option value="Bugs">App Breaking bugs</option>
+                    <option value="Others">Others</option>
                 </select>
             </mat-form-field>
             <mat-form-field class="example-full-width">

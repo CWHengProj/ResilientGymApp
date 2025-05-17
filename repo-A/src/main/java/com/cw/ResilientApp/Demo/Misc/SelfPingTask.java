@@ -16,7 +16,7 @@ public class SelfPingTask {
     public SelfPingTask(RestTemplateBuilder rtb) {
         this.rt = rtb.build();
     }
-    @Scheduled(fixedRate= 1000 * 14 * 60)
+    @Scheduled(fixedRate= 1000 * 10 * 60)
     public void pingSelf() {
         String selfUrl = url;
         try{

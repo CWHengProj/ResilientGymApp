@@ -37,7 +37,7 @@ export class DashBoardComponent implements OnInit, OnDestroy{
   }
   createForm(){
     this.userForm = this.fb.group({
-      urgency: this.fb.control<string>('low', Validators.required),
+      urgency: this.fb.control<string>('', Validators.required),
       comment: this.fb.control<string>('',[Validators.minLength(30), Validators.required])
       
     });

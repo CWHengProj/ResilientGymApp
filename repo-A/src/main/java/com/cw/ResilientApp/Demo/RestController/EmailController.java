@@ -30,7 +30,7 @@ public class EmailController {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(email.getAddress());
             message.setTo(ownerEmail);
-            message.setSubject("User feedback: "+email.getUrgency());
+            message.setSubject("Resilient User feedback: "+email.getUrgency());
             message.setText(email.getComment());
             mailSender.send(message);
             return ResponseEntity.ok("Success!");
