@@ -6,12 +6,10 @@
 # User feature requests
 - dark mode - []
 - delete user details should be more nuclear? or change the description of the delete feature
-- []
 # UX
 - Should have a button to skip exercise / increment without saving the current workout, maybe pagination? allow user to rotate through the exercise - []
 - AI button to become more helpful and comprehensive, not just by muscle groups - []
 - clone button for exercises so user can click less amount of times - []
 - Formatting for the exercise descriptions - []
-
 # Dev QOL
 - protect the backend by ensuring user is valid before being able to access their workouts - []
