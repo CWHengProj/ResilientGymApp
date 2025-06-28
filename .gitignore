@@ -2,3 +2,5 @@ repo-B/.vercel
 repo-B/node_modules
 repo-A/.mvn
 repo-B/android
+repo-B/.angular/
+repo-B/dist/

@@ -2,7 +2,6 @@
 - REDIS has been deleted due to inactivity :(
 - exercises are not getting updated unless the exercises are deleted - []
 - Default Exercises breaking usage for the builder page - too stubborn - []
-- Render server still spinning down despite scheduler for self pinging set up for 14 minute intervals - []
 # User feature requests
 - dark mode - []
 - delete user details should be more nuclear? or change the description of the delete feature
