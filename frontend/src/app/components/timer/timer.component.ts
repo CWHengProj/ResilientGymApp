@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core'
-import { Router } from '@angular/router'
-import { interval, map, Subscription, take } from 'rxjs'
-import { AuthService } from '../../services/auth-service.service'
-import { MatSnackBar } from '@angular/material/snack-bar'
+import { Router } from '@angular/router';
+import { interval, map, Subscription, take } from 'rxjs';
+import { AuthService } from '../../services/auth-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 @Component({

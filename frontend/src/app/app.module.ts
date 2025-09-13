@@ -26,6 +26,7 @@ import { Capacitor } from '@capacitor/core';
 
 // Service to detect Capacitor environment
 import { Injectable } from '@angular/core';
+import { NoticeBoardComponent } from './components/notice-board/notice-board.component';
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +59,7 @@ export class PlatformDetectorService {
     TimerComponent,
     LoginComponent,
     RegisterComponent,
+    NoticeBoardComponent,
   ],
   imports: [
     BrowserModule,
