@@ -37,6 +37,7 @@
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>
+    <app-notice-board></app-notice-board>
     @if(authService.currentUserSig()){
       <app-timer></app-timer>
     }
