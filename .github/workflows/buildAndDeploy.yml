@@ -1,0 +1,21 @@
+
+name: CICD script
+
+on:
+  push:
+    branches:
+        - 'main'
+jobs:
+    buildJob:
+        name: Executes the build script
+        runs-on: ubuntu-latest
+        # build script should build frontend and backend - ng , docker
+    deployJob:
+        name: Executes the deploy script
+        runs-on: ubuntu-latest
+        # deploy script should deploy frontend and backend - on vercel and render
+        # should fallback onto old build if any errors with building , maybe identify prev version before deployment?
+    emailJob:
+        name: Notifies if build or deployment fails early
+        runs-on: ubuntu-latest
+        
