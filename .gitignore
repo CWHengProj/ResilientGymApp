@@ -1,6 +1,6 @@
-repo-B/.vercel
-repo-B/node_modules
-repo-A/.mvn
-repo-B/android
-repo-B/.angular/
-repo-B/dist/
+frontend/.vercel
+frontend/node_modules
+frontend/.mvn
+frontend/android
+frontend/.angular/
+frontend/dist/
