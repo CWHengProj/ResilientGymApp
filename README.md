@@ -1,3 +1,4 @@
+# NOTE: app is not being maintained.
 # Resilient - the fitness app that gives your back your freedom
 https://www.resilientfitness.club
 
